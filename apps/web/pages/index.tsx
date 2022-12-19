@@ -1,10 +1,19 @@
-import { Button } from "ui";
+import Link from 'next/link'
+import dynamic from 'next/dynamic'
 
-export default function Web() {
+const Header = dynamic(import('../components/Header'))
+
+export default function Home() {
   return (
     <div>
-      <h1>Web</h1>
-      <Button />
+      <Header />
+      <p>This is our homepage</p>
+      <div>
+        <a href="/blog">Blog</a>
+      </div>
+      <div>
+        <Link href="/about">About us</Link>
+      </div>
     </div>
-  );
+  )
 }
